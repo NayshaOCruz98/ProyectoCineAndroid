@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:fitsSystemWindows="false"
         android:layout_height="match_parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_navbar"
             android:layout_width="match_parent"
@@ -112,11 +111,24 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/movie_title"
+            android:id="@+id/movie_title1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/cl_navbar"
             android:text="Titulo"
+            android:layout_marginTop="10dp"
+            android:padding="@dimen/paddin_title_rv"
+            android:textColor="#D39130"
+            android:textStyle="bold"
+            android:textSize="@dimen/sixe_title_rv"
+            tools:ignore="SpUsage" />
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/movie_title1"
+            android:layout_marginTop="10dp"
+            android:text=""
             android:padding="@dimen/paddin_title_rv"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -124,17 +136,50 @@
             tools:ignore="SpUsage" />
 
         <TextView
-            android:id="@+id/movie_description"
+            android:id="@+id/movie_description1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+
             android:padding="@dimen/paddin_title_rv"
             android:text="Descripcion"
-            android:textColor="@color/white"
+            android:textColor="#CF8D2C"
             android:textSize="@dimen/sixe_title_rv"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@+id/movie_title"
             tools:ignore="SpUsage"
             tools:layout_editor_absoluteX="-16dp" />
+
+        <TextView
+            android:id="@+id/movie_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="@dimen/paddin_title_rv"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/sixe_title_rv"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/movie_description1"
+            tools:ignore="SpUsage"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_comprar"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Comprar"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_buy"
+            app:iconTint="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/movie_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

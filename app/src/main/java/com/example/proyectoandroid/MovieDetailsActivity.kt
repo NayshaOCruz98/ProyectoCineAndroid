@@ -21,12 +21,12 @@ class MovieDetailsActivity : AppCompatActivity() {
         val watchTrailerButton = findViewById<Button>(R.id.btn_play_movie)
         val movieTitle = findViewById<TextView>(R.id.movie_title)
         val movieDescription = findViewById<TextView>(R.id.movie_description)
-
+        val buyButton = findViewById<Button>(R.id.btn_comprar)
         // Obtener los datos del Intent
-        val title = intent.getStringExtra("title")
-        val description = intent.getStringExtra("description")
+        val title = intent.getStringExtra("title") ?: ""
+        val description = intent.getStringExtra("description") ?: ""
         val imageResId = intent.getIntExtra("poster", -1)
-        val trailerUrl = intent.getStringExtra("trailerUrl")
+        val trailerUrl = intent.getStringExtra("trailerUrl") ?: ""
 
         // Configurar los datos en las vistas
         movieTitle.text = title
@@ -41,6 +41,10 @@ class MovieDetailsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        buyButton.setOnClickListener {
+            val intent = Intent(this, StepActivity::class.java)
+            startActivity(intent)
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

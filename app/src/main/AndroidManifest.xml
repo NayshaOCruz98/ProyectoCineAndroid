@@ -13,6 +13,15 @@
         android:theme="@style/Theme.ProyectoAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".ConfiteriaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".comprasTicketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StepActivity"
+            android:exported="false" />
+        <activity
             android:name=".MovieDetailsActivity"
             android:exported="false" />
         <activity
@@ -26,7 +35,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.example.proyectoandroid
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -7,12 +9,19 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 
 class MenuPrincipalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_menu_principal)
+
+
+        val btnPlayMovie = findViewById<MaterialButton>(R.id.btn_play_movie)
+        btnPlayMovie.setOnClickListener {
+            openTrailer("https://www.youtube.com/watch?v=UzFZR2dRsSY")
+        }
 
         // Obtener una referencia al RecyclerView
         val rvPremiere = findViewById<RecyclerView>(R.id.rv_premiere)
@@ -37,5 +46,10 @@ class MenuPrincipalActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+    }
+    private fun openTrailer(trailerUrl: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(trailerUrl))
+        startActivity(intent)
     }
 }

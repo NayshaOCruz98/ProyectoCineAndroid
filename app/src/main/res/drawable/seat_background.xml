@@ -1,0 +1,15 @@
+<!-- res/drawable/seat_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/white" /> <!-- Fondo blanco o cualquier otro color -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/black" /> <!-- Color del contorno -->
+            <corners android:radius="4dp" /> <!-- Radio de las esquinas -->
+            <padding
+                android:left="2dp"
+                android:top="2dp"
+                android:right="2dp"
+                android:bottom="2dp" />
+        </shape>
+    </item>
+</layer-list>
