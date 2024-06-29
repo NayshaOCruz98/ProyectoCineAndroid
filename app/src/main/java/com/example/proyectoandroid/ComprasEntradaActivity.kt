@@ -1,6 +1,8 @@
 package com.example.proyectoandroid
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,19 +23,27 @@ class ComprasEntradaActivity : AppCompatActivity() {
     )
     private lateinit var totalTickets: TextView
     private lateinit var totalPrice: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_compras_entrada)
+
         recyclerView = findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = TicketAdapter(ticketList){ updateTotals() }
+        adapter = TicketAdapter(ticketList) { updateTotals() }
         recyclerView.adapter = adapter
 
         totalTickets = findViewById(R.id.total_tickets)
         totalPrice = findViewById(R.id.total_price)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        val continueButton = findViewById<Button>(R.id.continue_button)
+        continueButton.setOnClickListener {
+            val intent = Intent(this, StepActivity::class.java)
+            startActivity(intent)
+        }
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.Comprasmain)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets

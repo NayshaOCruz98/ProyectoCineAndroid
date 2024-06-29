@@ -42,10 +42,10 @@ class MovieDetailsActivity : AppCompatActivity() {
         }
 
         buyButton.setOnClickListener {
-            val intent = Intent(this, StepActivity::class.java)
+            val intent = Intent(this, ComprasEntradaActivity::class.java)
             startActivity(intent)
         }
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.Detailsmain)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 data class ConfiteriaItem(val image: Int, val name: String, val price: String, val description: String)
 
-class ConfiteriaAdapter(private val items: List<ConfiteriaItem>) : RecyclerView.Adapter<ConfiteriaAdapter.ConfiteriaViewHolder>() {
+class ConfiteriaAdapter(val items: List<ConfiteriaItem>, private val onQuantityChanged: () -> Unit) : RecyclerView.Adapter<ConfiteriaAdapter.ConfiteriaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConfiteriaViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_confiteria, parent, false)
@@ -28,12 +28,14 @@ class ConfiteriaAdapter(private val items: List<ConfiteriaItem>) : RecyclerView.
         holder.increaseButton.setOnClickListener {
             val currentQuantity = holder.quantity.text.toString().toInt()
             holder.quantity.text = (currentQuantity + 1).toString()
+            onQuantityChanged()
         }
 
         holder.decreaseButton.setOnClickListener {
             val currentQuantity = holder.quantity.text.toString().toInt()
             if (currentQuantity > 0) {
                 holder.quantity.text = (currentQuantity - 1).toString()
+                onQuantityChanged()
             }
         }
     }
