@@ -9,4 +9,7 @@
         <item name="strokeColor">@color/seat_stroke_color</item>
 
     </style>
+    <style name="SpinnerTextColor" parent="Widget.AppCompat.Spinner">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
 </resources>
