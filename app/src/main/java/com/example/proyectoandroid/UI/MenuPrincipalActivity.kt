@@ -26,19 +26,28 @@ class MenuPrincipalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal)
 
+        val token = intent.getStringExtra("token")
+
         val recyclerView: RecyclerView = findViewById(R.id.rv_premiere)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
 
         lifecycleScope.launch {
-            val movies = getMovies()
+            val movies = getMovies(token)
             recyclerView.adapter = MovieAdapter(movies, this@MenuPrincipalActivity)
         }
     }
 
-    private suspend fun getMovies(): List<Movie> {
+    private suspend fun getMovies(token:String?): List<Movie> {
         return withContext(Dispatchers.IO) {
-            val response = RetrofitInstance.api.getMovies()
-            response.list
+            token?.let {
+                val response = RetrofitInstance.movieApi.getMovies("Bearer $token")
+                if (response.isSuccessful) {
+                    response.body()?.list ?: emptyList()
+                } else {
+                    // Manejar errores de la respuesta aquí si es necesario
+                    emptyList()
+                }
+            } ?: emptyList()
         }
     }
 }
