@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/stepmain"
+    android:background="@color/black">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:textColor="@color/my_primary"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:title="Butacas"
+        app:titleTextColor="@color/white" />
+
+    <TextView
+        android:id="@+id/movieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="El Club de los Vandalos"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/movieDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cp Alcazar, Sala 8 | 2D, REGULAR, SUBTITULAD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieTitle" />
+
+    <TextView
+        android:id="@+id/screenLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Pantalla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieDetails" />
+
+    <View
+        android:id="@+id/screen"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/screenLabel"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <GridLayout
+        android:id="@+id/seatsGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:columnCount="10"
+        android:rowCount="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/screen">
+
+        <Button
+            android:id="@+id/seat_1"
+            style="@style/SeatButtonStyle"
+            android:layout_width="53dp"
+            android:background="@drawable/chair_black"
+            android:text="A1" />
+
+        <Button
+            android:id="@+id/seat_2"
+            style="@style/SeatButtonStyle"
+            android:layout_width="53dp"
+            android:background="@drawable/chair_black"
+            android:text="A2" />
+        <Button
+            android:id="@+id/seat_3"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="53dp"
+            android:text="A3" />
+
+        <Button
+            android:id="@+id/seat_4"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="53dp"
+            android:text="A4" />
+        <Button
+            android:id="@+id/seat_5"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="53dp"
+            android:text="A5" />
+
+        <Button
+            android:id="@+id/seat_6"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="53dp"
+            android:text="A6" />
+
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/seatsGrid2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="10"
+        android:rowCount="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seatsGrid">
+
+        <Button
+            android:id="@+id/seat_7"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="53dp"
+            android:text="E7"
+            />
+
+        <Button
+            android:id="@+id/seat_8"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="57dp"
+            android:text="E8" />
+        <Button
+            android:id="@+id/seat_9"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="52dp"
+            android:text="E9" />
+
+        <Button
+            android:id="@+id/seat_10"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="E10" />
+        <Button
+            android:id="@+id/seat_11"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="E11" />
+
+        <Button
+            android:id="@+id/seat_12"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="E13" />
+
+    </GridLayout>
+    <GridLayout
+        android:id="@+id/seatsGrid3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="10"
+        android:rowCount="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seatsGrid2">
+
+        <Button
+            android:id="@+id/seat_13"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="64dp"
+            android:text="C14" />
+
+        <Button
+            android:id="@+id/seat_14"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="61dp"
+            android:text="C15" />
+        <Button
+            android:id="@+id/seat_15"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="61dp"
+            android:text="C16" />
+
+        <Button
+            android:id="@+id/seat_16"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="61dp"
+            android:text="C17" />
+        <Button
+            android:id="@+id/seat_17"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="61dp"
+            android:text="C18" />
+
+        <Button
+            android:id="@+id/seat_18"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="61dp"
+            android:text="C19" />
+
+    </GridLayout>
+    <GridLayout
+        android:id="@+id/seatsGrid4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="10"
+        android:rowCount="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seatsGrid3">
+
+        <Button
+            android:id="@+id/seat_19"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="D20" />
+
+        <Button
+            android:id="@+id/seat_20"
+            style="@style/SeatButtonStyle"
+            android:layout_width="61dp"
+            android:background="@drawable/chair_black"
+            android:text="D21" />
+        <Button
+            android:id="@+id/seat_21"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="61dp"
+            android:text="D22" />
+
+        <Button
+            android:id="@+id/seat_22"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="61dp"
+            android:text="D23" />
+        <Button
+            android:id="@+id/seat_23"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="61dp"
+            android:text="D24" />
+
+        <Button
+            android:id="@+id/seat_24"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="61dp"
+            android:text="D25" />
+
+    </GridLayout>
+    <GridLayout
+        android:id="@+id/seatsGrid5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:columnCount="10"
+        android:rowCount="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seatsGrid4">
+
+        <Button
+            android:id="@+id/seat_25"
+            style="@style/SeatButtonStyle"
+            android:layout_width="60dp"
+            android:background="@drawable/chair_black"
+            android:text="E26" />
+
+        <Button
+            android:id="@+id/seat_26"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="E27" />
+        <Button
+            android:id="@+id/seat_27"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="E28" />
+
+        <Button
+            android:id="@+id/seat_28"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="E29" />
+        <Button
+            android:id="@+id/seat_29"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="E30" />
+
+        <Button
+            android:id="@+id/seat_30"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="E31" />
+
+    </GridLayout>
+    <GridLayout
+        android:id="@+id/seatsGrid6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="10"
+        android:rowCount="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seatsGrid5">
+
+        <Button
+            android:id="@+id/seat_31"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="F32" />
+
+        <Button
+            android:id="@+id/seat_32"
+            style="@style/SeatButtonStyle"
+            android:layout_width="60dp"
+            android:background="@drawable/chair_black"
+            android:text="F33" />
+        <Button
+            android:id="@+id/seat_33"
+            style="@style/SeatButtonStyle"
+            android:layout_width="60dp"
+            android:background="@drawable/chair_black"
+            android:text="F34" />
+
+        <Button
+            android:id="@+id/seat_34"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="F35" />
+        <Button
+            android:id="@+id/seat_35"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="F36" />
+
+        <Button
+            android:id="@+id/seat_36"
+            style="@style/SeatButtonStyle"
+            android:background="@drawable/chair_black"
+            android:layout_width="60dp"
+            android:text="F37" />
+
+    </GridLayout>
+    <TextView
+        android:id="@+id/seatCountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Butacas Seleccionadas"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seatsGrid6"
+        app:layout_constraintEnd_toStartOf="@id/seatCount" />
+
+    <TextView
+        android:id="@+id/seatCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@id/seatCountLabel"
+        app:layout_constraintStart_toEndOf="@id/seatCountLabel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Continuar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
