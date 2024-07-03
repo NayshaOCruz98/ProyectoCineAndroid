@@ -26,6 +26,7 @@ class StepActivity : AppCompatActivity() {
         // Obtener la cantidad total de asientos permitidos del intent recibido
         cantidadtotal = intent.getIntExtra("cantidad", 0)
         preciototal = intent.getDoubleExtra("precioTotal", 0.0)
+        var nombre_pel = intent.getStringExtra("nombre_pel")
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.stepmain)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -50,6 +51,7 @@ class StepActivity : AppCompatActivity() {
             val intent = Intent(this, ConfiteriaActivity::class.java)
             intent.putExtra("cantidadboletos", cantidadtotal)
             intent.putExtra("preciototal", preciototal)
+            intent.putExtra("nombre_pel",nombre_pel)
             startActivity(intent)
         }
 

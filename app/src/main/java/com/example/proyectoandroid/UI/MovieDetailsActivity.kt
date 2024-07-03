@@ -57,6 +57,7 @@ class MovieDetailsActivity : AppCompatActivity() {
 
         buyButton.setOnClickListener {
             val intent = Intent(this, ComprasEntradaActivity::class.java)
+            intent.putExtra("nombre_pel", title)
             startActivity(intent)
         }
 

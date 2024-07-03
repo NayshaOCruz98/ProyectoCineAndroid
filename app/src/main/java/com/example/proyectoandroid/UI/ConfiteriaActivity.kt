@@ -21,7 +21,6 @@ class ConfiteriaActivity : AppCompatActivity() {
     private lateinit var totalCost: TextView
     private var cantidadboletos: Int = 0
     private var preciototal: Double = 0.0
-    private var totalItemCost: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,12 +43,14 @@ class ConfiteriaActivity : AppCompatActivity() {
 
         totalItems = findViewById(R.id.total_items)
         totalCost = findViewById(R.id.total_cost)
+        var nombre_pel = intent.getStringExtra("nombre_pel")
 
         findViewById<Button>(R.id.continue_button).setOnClickListener {
             val intent = Intent(this, ListadoCompraActivity::class.java)
             intent.putExtra("cantidadboletos", cantidadboletos)
             intent.putExtra("preciototal_entrada", preciototal)
             intent.putExtra("total_item_cost", totalCost())
+            intent.putExtra("nombre_pel",nombre_pel)
             startActivity(intent)
         }
 

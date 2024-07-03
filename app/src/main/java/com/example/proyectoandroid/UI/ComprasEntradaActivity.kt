@@ -41,10 +41,12 @@ class ComprasEntradaActivity : AppCompatActivity() {
         totalPrice = findViewById(R.id.total_price)
 
         val continueButton = findViewById<Button>(R.id.continue_button)
+        val nombrePelicula = intent.getStringExtra("nombre_pel")
         continueButton.setOnClickListener {
             val intent = Intent(this, StepActivity::class.java)
             intent.putExtra("cantidad", getTotalQuantity())
             intent.putExtra("precioTotal", getTotalPrice())
+            intent.putExtra("nombre_pel", nombrePelicula)
             startActivity(intent)
         }
 
